@@ -5,7 +5,7 @@ from pathlib import Path
 
 def measure_transcription_latency(file_path, num_loops=10):
     # API endpoint
-    url = "http://localhost:8000/transcribe/"
+    url = "http://34.90.171.36:8000/transcribe/"
     
     # Get audio duration
     import librosa
@@ -21,7 +21,7 @@ def measure_transcription_latency(file_path, num_loops=10):
     for i in range(num_loops):
         # Prepare the file for upload
         files = {
-            'file': ('sample.mp3', open(file_path, 'rb'), 'audio/mpeg')
+            'file': ('clip_10mins.mp3', open(file_path, 'rb'), 'audio/mpeg')
         }
         
         # Measure time
@@ -68,11 +68,14 @@ def measure_transcription_latency(file_path, num_loops=10):
     return None
 
 if __name__ == "__main__":
-    # Replace with your audio file path
-    audio_file = "sample.mp3"
+    import sys
+    
+    # Get audio file from command line argument or use default
+    audio_file = sys.argv[1] if len(sys.argv) > 1 else "sample.mp3"
     
     if not Path(audio_file).exists():
         print(f"Error: Audio file '{audio_file}' not found!")
+        print("Usage: python perf.py [audio_file_path]")
         exit(1)
     
     results = measure_transcription_latency(audio_file, num_loops=10)
