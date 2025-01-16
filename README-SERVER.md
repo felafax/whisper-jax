@@ -16,6 +16,15 @@ sudo docker run --rm -it \
   gcr.io/felafax-training/whisper-jax-server:latest
 ```
 
+### Manual TPU Setup
+```bash
+# setup env
+pip install -e ".[dev,endpoint]" # installs setup.py
+
+# run server
+python server.py
+```
+
 ### TPU Firewall Configuration
 ```bash
 gcloud compute tpus tpu-vm update "calm-bear-569" \
