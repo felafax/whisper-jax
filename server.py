@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 # Initialize JAX cache and model configuration
 cc.initialize_cache("./jax_cache")
-checkpoint = "openai/whisper-large-v2"
+checkpoint = "openai/whisper-large-v3"
 BATCH_SIZE = 32
 FILE_LIMIT_MB = 1000
 

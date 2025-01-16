@@ -22,21 +22,21 @@ from setuptools import find_packages, setup
 
 
 _deps = [
-    "transformers>=4.27.4,<4.35.0",
+    "transformers",
     "flax",
     "cached-property",
 ]
 
 _extras_dev_deps = [
-    "black~=23.1",
-    "isort>=5.5.4",
-    "ruff>=0.0.241,<=0.0.259",
+    "black",
+    "isort",
+    "ruff",
 ]
 
 _extras_endpoint_deps = [
-    "gradio>=4.9.1",
-    "requests>=2.28.2",
-    "yt-dlp>=2023.3.4",
+    "gradio",
+    "requests",
+    "yt-dlp",
     "fastapi",
     "python-multipart",
     "uvicorn",
