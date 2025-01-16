@@ -37,6 +37,10 @@ _extras_endpoint_deps = [
     "gradio>=4.9.1",
     "requests>=2.28.2",
     "yt-dlp>=2023.3.4",
+    "fastapi",
+    "python-multipart",
+    "uvicorn",
+    "numpy",
 ]
 
 
