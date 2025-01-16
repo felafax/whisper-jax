@@ -25,8 +25,7 @@ from flax.core.frozen_dict import freeze
 from flax.training.common_utils import shard
 from jax.sharding import PartitionSpec as P
 from transformers import WhisperProcessor, is_tokenizers_available, WhisperFeatureExtractor, WhisperTokenizerFast
-from transformers.models.whisper.tokenization_whisper import TO_LANGUAGE_CODE, WhisperTokenizer
-from transformers.pipelines.audio_utils import ffmpeg_read
+from transformers.models.whisper.tokenization_whisper import TO_LANGUAGE_CODE, WhisperTokenizer from transformers.pipelines.audio_utils import ffmpeg_read
 from transformers.utils import logging
 
 from .modeling_flax_whisper import FlaxWhisperForConditionalGeneration
