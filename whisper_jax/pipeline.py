@@ -87,7 +87,7 @@ class FlaxWhisperPipline:
 
         self.model, self.params = FlaxWhisperForConditionalGeneration.from_pretrained(
             self.checkpoint,
-            _do_init=False,
+            # _do_init=False,
             dtype=self.dtype,
             from_pt=True,
         )
