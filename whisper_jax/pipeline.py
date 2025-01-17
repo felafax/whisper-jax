@@ -89,6 +89,7 @@ class FlaxWhisperPipline:
             self.checkpoint,
             _do_init=False,
             dtype=self.dtype,
+            from_pt=True,
         )
 
         self.max_length = max_length if max_length is not None else self.model.generation_config.max_length
