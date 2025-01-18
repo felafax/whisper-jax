@@ -5,7 +5,7 @@ from pathlib import Path
 
 def measure_transcription_latency(file_path, num_loops=10):
     # API endpoint
-    url = "http://34.90.171.36:8000/transcribe/"
+    url = "http://34.162.155.72:8000/transcribe/"
     
     # Get audio duration
     import librosa

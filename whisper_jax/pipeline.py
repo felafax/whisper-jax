@@ -85,13 +85,13 @@ class FlaxWhisperPipline:
         tokenizer_cls = WhisperTokenizerFast if is_tokenizers_available() else WhisperTokenizer
         self.tokenizer = tokenizer_cls.from_pretrained(checkpoint)
 
-        self.model = FlaxWhisperForConditionalGeneration.from_pretrained(
+        self.model, self.params = FlaxWhisperForConditionalGeneration.from_pretrained(
             self.checkpoint,
-            # _do_init=False,
+            _do_init=False,
             dtype=self.dtype,
-            from_pt=True,
+            # from_pt=True,
         )
-        self.params = self.model.params
+        # self.params = self.model.params
 
         self.max_length = max_length if max_length is not None else self.model.generation_config.max_length
         self.min_batch_size = jax.local_device_count()
